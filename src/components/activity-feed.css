@@ -1,0 +1,89 @@
+/*
+ * Activity Feed — timeline list of recent events.
+ * New reusable component; built from existing tokens only.
+ */
+
+.activity-feed {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-12);
+  padding: var(--spacing-8) 0;
+  width: 100%;
+}
+
+.activity-item__dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+}
+
+.activity-item__dot .icon {
+  width: 12px;
+  height: 12px;
+}
+
+.activity-item__dot--info {
+  background: var(--semantic-info-background);
+  color: var(--semantic-info-foreground);
+}
+
+.activity-item__dot--success {
+  background: var(--semantic-success-background);
+  color: var(--semantic-success-foreground);
+}
+
+.activity-item__dot--error {
+  background: var(--semantic-error-background);
+  color: var(--semantic-error-foreground);
+}
+
+.activity-item__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.activity-item__title {
+  font-size: var(--dashboard-text-sm-size);
+  line-height: var(--dashboard-text-sm-line-height);
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.activity-item__meta {
+  font-size: var(--dashboard-text-2xs-size);
+  line-height: var(--dashboard-text-2xs-line-height);
+  color: var(--text-tertiary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.activity-item__time {
+  flex-shrink: 0;
+  font-size: var(--dashboard-text-2xs-size);
+  line-height: var(--dashboard-text-2xs-line-height);
+  color: var(--text-tertiary);
+  white-space: nowrap;
+}
+
+.activity-item__separator {
+  height: 1px;
+  background: var(--border-default);
+  width: 100%;
+}

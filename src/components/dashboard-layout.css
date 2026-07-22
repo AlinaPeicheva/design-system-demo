@@ -1,0 +1,70 @@
+/*
+ * Dashboard Layout — content-area grid regions shared by dashboard-style
+ * pages (KPI row, chart + side cards row, table). Built from tokens only.
+ */
+
+.content-area {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-24);
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  padding: var(--spacing-32);
+}
+
+.mid-row {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) 280px 280px;
+  gap: var(--spacing-24);
+  width: 100%;
+  align-items: start;
+}
+
+.mid-row__chart-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-20);
+  min-width: 0;
+}
+
+.mid-row__side-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+}
+
+@media (max-width: 1200px) {
+  .mid-row {
+    grid-template-columns: minmax(0, 1fr) 280px;
+    grid-template-areas:
+      "chart chart"
+      "products activity";
+  }
+
+  .mid-row__chart-card {
+    grid-area: chart;
+  }
+
+  .mid-row > .mid-row__side-card:nth-of-type(2) {
+    grid-area: products;
+  }
+
+  .mid-row > .mid-row__side-card:nth-of-type(3) {
+    grid-area: activity;
+  }
+}
+
+@media (max-width: 720px) {
+  .mid-row {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "chart"
+      "products"
+      "activity";
+  }
+
+  .content-area {
+    padding: var(--spacing-16);
+  }
+}

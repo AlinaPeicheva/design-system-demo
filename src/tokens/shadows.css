@@ -1,0 +1,13 @@
+/*
+ * Effect Styles — shadows.
+ * Every level is a double-layered drop shadow using gray/900
+ * (#111827) at low opacity — outer layer lighter, inner layer darker.
+ * Figma: Shadow/Subtle, Shadow/Low, Shadow/Medium, Shadow/High
+ */
+
+:root {
+  --shadow-subtle: 0px 1px 3px 0px rgba(17, 24, 39, 0.06), 0px 1px 2px 0px rgba(17, 24, 39, 0.1);
+  --shadow-low: 0px 4px 6px -2px rgba(17, 24, 39, 0.08), 0px 2px 4px -1px rgba(17, 24, 39, 0.12);
+  --shadow-medium: 0px 10px 15px -3px rgba(17, 24, 39, 0.1), 0px 4px 6px -2px rgba(17, 24, 39, 0.15);
+  --shadow-high: 0px 20px 25px -5px rgba(17, 24, 39, 0.12), 0px 8px 10px -3px rgba(17, 24, 39, 0.18);
+}

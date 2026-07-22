@@ -1,0 +1,35 @@
+/*
+ * Status Badge — semantic pill (e.g. order status).
+ * New reusable component; built from existing tokens only.
+ */
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-2) var(--spacing-8);
+  border-radius: var(--radius-full);
+  font-size: var(--dashboard-text-2xs-size);
+  line-height: var(--dashboard-text-2xs-line-height);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.status-badge--success {
+  background: var(--semantic-success-background);
+  color: var(--semantic-success-foreground);
+}
+
+.status-badge--info {
+  background: var(--semantic-info-background);
+  color: var(--semantic-info-foreground);
+}
+
+.status-badge--warning {
+  background: var(--semantic-warning-background);
+  color: var(--semantic-warning-foreground);
+}
+
+.status-badge--error {
+  background: var(--semantic-error-background);
+  color: var(--semantic-error-foreground);
+}

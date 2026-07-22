@@ -1,0 +1,57 @@
+/*
+ * Progress Bar — labeled value bar (e.g. Top Products ranking).
+ * New reusable component; built from existing tokens only.
+ */
+
+.progress-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  width: 100%;
+}
+
+.progress-row__labels {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--dashboard-text-sm-size);
+  line-height: var(--dashboard-text-sm-line-height);
+  color: var(--text-primary);
+}
+
+.progress-row__name {
+  font-weight: 500;
+}
+
+.progress-row__value {
+  font-weight: 600;
+}
+
+.progress-bar {
+  position: relative;
+  height: 6px;
+  width: 100%;
+  background: var(--background-tertiary);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.progress-bar__fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  height: 100%;
+  border-radius: var(--radius-sm);
+  background: var(--button-brand-regular);
+}
+
+.progress-bar__fill--success {
+  background: var(--semantic-success-foreground);
+}
+
+.progress-bar__fill--warning {
+  background: var(--semantic-warning-foreground);
+}
+
+.progress-bar__fill--error {
+  background: var(--semantic-error-foreground);
+}

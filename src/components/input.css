@@ -1,0 +1,173 @@
+/*
+ * Input — text field. See CLAUDE.md § Input for variant axes.
+ * Figma: Input component set (41:944)
+ *
+ * Axes: Size (Compact/Cozy) x State (via native :hover/:focus/:disabled/
+ * [readonly]) x Value State (.input--negative/critical/positive/information)
+ *
+ * Note: the field's 6px corner radius uses the shared --radius-field
+ * token (dimensions.css) — it doesn't map to radius/sm (4px) or
+ * radius/md (8px), but recurs identically on the header's date-filter
+ * and tab-group chips, so it's centralized there instead of repeated.
+ */
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  width: 100%;
+}
+
+.input__label-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.input__label {
+  font-family: var(--typography-caption-font-family);
+  font-size: var(--typography-caption-font-size);
+  font-weight: 500;
+  line-height: var(--typography-caption-line-height);
+  letter-spacing: var(--typography-caption-letter-spacing);
+  color: var(--input-text-label);
+}
+
+.input__required {
+  font-family: var(--typography-caption-font-family);
+  font-size: var(--typography-caption-font-size);
+  line-height: var(--typography-caption-line-height);
+  color: var(--input-text-required);
+}
+
+.input__field {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
+  width: 100%;
+  padding: 0 var(--spacing-12);
+  background: var(--input-background-default);
+  border: 1.5px solid var(--input-border-default);
+  border-radius: var(--radius-field);
+  transition: border-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.input--compact .input__field {
+  height: 32px;
+}
+
+.input--cozy .input__field {
+  height: 40px;
+}
+
+.input__field:hover {
+  border-color: var(--input-border-hover);
+}
+
+.input__field:focus-within {
+  border-color: var(--input-border-focus);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--input-border-focus-ring) 30%, transparent);
+}
+
+.input__icon {
+  color: var(--input-icon-default);
+}
+
+.input__control {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: none;
+  outline: none;
+  font-family: var(--typography-body-small-font-family);
+  font-size: var(--typography-body-small-font-size);
+  font-weight: var(--typography-body-small-font-weight);
+  line-height: var(--typography-body-small-line-height);
+  letter-spacing: var(--typography-body-small-letter-spacing);
+  color: var(--input-text-value);
+}
+
+.input__control::placeholder {
+  color: var(--input-text-placeholder);
+}
+
+.input__helper {
+  font-family: var(--typography-caption-font-family);
+  font-size: var(--typography-caption-font-size);
+  line-height: var(--typography-caption-line-height);
+  letter-spacing: var(--typography-caption-letter-spacing);
+  color: var(--input-text-helper);
+}
+
+/* State: read-only */
+
+.input__control:read-only {
+  color: var(--input-text-readonly);
+}
+
+.input:has(.input__control:read-only) .input__field {
+  background: var(--input-background-readonly);
+}
+
+/* State: disabled */
+
+.input__control:disabled {
+  color: var(--input-text-disabled);
+  cursor: not-allowed;
+}
+
+.input:has(.input__control:disabled) .input__field {
+  background: var(--input-background-disabled);
+  border-color: var(--input-border-disabled);
+}
+
+.input:has(.input__control:disabled) .input__icon {
+  color: var(--input-icon-disabled);
+}
+
+.input:has(.input__control:disabled) .input__label,
+.input:has(.input__control:disabled) .input__helper {
+  color: var(--input-text-disabled);
+}
+
+/* Value states */
+
+.input--negative .input__field {
+  border-color: var(--input-border-negative);
+}
+.input--negative .input__field:hover {
+  border-color: var(--input-border-hover-negative);
+}
+.input--negative .input__icon {
+  color: var(--input-icon-negative);
+}
+
+.input--critical .input__field {
+  border-color: var(--input-border-critical);
+}
+.input--critical .input__field:hover {
+  border-color: var(--input-border-hover-critical);
+}
+.input--critical .input__icon {
+  color: var(--input-icon-critical);
+}
+
+.input--positive .input__field {
+  border-color: var(--input-border-positive);
+}
+.input--positive .input__field:hover {
+  border-color: var(--input-border-hover-positive);
+}
+.input--positive .input__icon {
+  color: var(--input-icon-positive);
+}
+
+.input--information .input__field {
+  border-color: var(--input-border-information);
+}
+.input--information .input__field:hover {
+  border-color: var(--input-border-hover-information);
+}
+.input--information .input__icon {
+  color: var(--input-icon-information);
+}

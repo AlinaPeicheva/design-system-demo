@@ -1,0 +1,198 @@
+/*
+ * Theme Tokens — Light (default) / Dark.
+ * All values alias Primitive Colors (colors.css). Bind color to these,
+ * never to primitives directly.
+ * Figma: Theme collection (VariableCollectionId:7:83), modes Light (7:2) / Dark (7:3)
+ *
+ * Mode resolution order: system preference, then an explicit
+ * [data-theme] attribute on <html> always wins over system preference.
+ */
+
+:root {
+  /* Background */
+  --background-primary: var(--gray-50);
+  --background-secondary: var(--gray-100);
+  --background-tertiary: var(--gray-200);
+
+  /* Foreground */
+  --foreground-primary: var(--gray-900);
+  --foreground-secondary: var(--gray-700);
+  --foreground-tertiary: var(--gray-500);
+
+  /* Text */
+  --text-primary: var(--gray-900);
+  --text-secondary: var(--gray-600);
+  --text-tertiary: var(--gray-400);
+  --text-disabled: var(--gray-300);
+  --text-inverse: var(--gray-50);
+
+  /* Icon */
+  --icon-primary: var(--gray-900);
+  --icon-secondary: var(--gray-600);
+  --icon-tertiary: var(--gray-400);
+  --icon-disabled: var(--gray-300);
+  --icon-inverse: var(--gray-50);
+
+  /* Border */
+  --border-default: var(--gray-200);
+  --border-secondary: var(--gray-300);
+  --border-tertiary: var(--gray-100);
+  --border-disabled: var(--gray-200);
+
+  /* Semantic */
+  --semantic-error-background: var(--red-50);
+  --semantic-error-foreground: var(--red-600);
+  --semantic-error-border: var(--red-300);
+  --semantic-warning-background: var(--yellow-50);
+  --semantic-warning-foreground: var(--yellow-600);
+  --semantic-warning-border: var(--yellow-300);
+  --semantic-success-background: var(--green-50);
+  --semantic-success-foreground: var(--green-600);
+  --semantic-success-border: var(--green-300);
+  --semantic-info-background: var(--info-50);
+  --semantic-info-foreground: var(--info-600);
+  --semantic-info-border: var(--info-300);
+
+  /* Button */
+  --button-brand-regular: var(--blue-600);
+  --button-brand-hover: var(--blue-700);
+  --button-brand-active: var(--blue-800);
+  --button-brand-disabled: var(--blue-200);
+  --button-reject-regular: var(--red-600);
+  --button-reject-hover: var(--red-700);
+  --button-reject-active: var(--red-800);
+  --button-reject-disabled: var(--red-200);
+
+  /* Input — identical in both modes: these sit on a white field
+     regardless of page background, so they do not vary with theme. */
+  --input-background-default: var(--gray-50);
+  --input-background-disabled: var(--gray-100);
+  --input-background-readonly: var(--gray-100);
+  --input-border-default: var(--gray-300);
+  --input-border-hover: var(--gray-500);
+  --input-border-focus: var(--blue-600);
+  --input-border-active: var(--blue-600);
+  --input-border-disabled: var(--gray-200);
+  --input-border-negative: var(--red-600);
+  --input-border-critical: var(--yellow-700);
+  --input-border-positive: var(--green-600);
+  --input-border-information: var(--info-600);
+  --input-border-focus-ring: var(--blue-600);
+  --input-border-hover-negative: var(--red-700);
+  --input-border-hover-critical: var(--yellow-800);
+  --input-border-hover-positive: var(--green-700);
+  --input-border-hover-information: var(--info-700);
+  --input-text-placeholder: var(--gray-600);
+  --input-text-value: var(--gray-900);
+  --input-text-disabled: var(--gray-300);
+  --input-text-readonly: var(--gray-600);
+  --input-text-label: var(--gray-900);
+  --input-text-helper: var(--gray-600);
+  --input-text-required: var(--red-600);
+  --input-icon-default: var(--gray-600);
+  --input-icon-disabled: var(--gray-300);
+  --input-icon-negative: var(--red-600);
+  --input-icon-critical: var(--yellow-600);
+  --input-icon-positive: var(--green-600);
+  --input-icon-information: var(--info-600);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --background-primary: var(--gray-900);
+    --background-secondary: var(--gray-800);
+    --background-tertiary: var(--gray-700);
+
+    --foreground-primary: var(--gray-50);
+    --foreground-secondary: var(--gray-200);
+    --foreground-tertiary: var(--gray-400);
+
+    --text-primary: var(--gray-50);
+    --text-secondary: var(--gray-300);
+    --text-tertiary: var(--gray-500);
+    --text-disabled: var(--gray-600);
+    --text-inverse: var(--gray-900);
+
+    --icon-primary: var(--gray-50);
+    --icon-secondary: var(--gray-300);
+    --icon-tertiary: var(--gray-500);
+    --icon-disabled: var(--gray-600);
+    --icon-inverse: var(--gray-900);
+
+    --border-default: var(--gray-700);
+    --border-secondary: var(--gray-600);
+    --border-tertiary: var(--gray-800);
+    --border-disabled: var(--gray-700);
+
+    --semantic-error-background: var(--red-900);
+    --semantic-error-foreground: var(--red-300);
+    --semantic-error-border: var(--red-700);
+    --semantic-warning-background: var(--yellow-900);
+    --semantic-warning-foreground: var(--yellow-300);
+    --semantic-warning-border: var(--yellow-700);
+    --semantic-success-background: var(--green-900);
+    --semantic-success-foreground: var(--green-300);
+    --semantic-success-border: var(--green-700);
+    --semantic-info-background: var(--info-900);
+    --semantic-info-foreground: var(--info-300);
+    --semantic-info-border: var(--info-700);
+
+    --button-brand-regular: var(--blue-400);
+    --button-brand-hover: var(--blue-300);
+    --button-brand-active: var(--blue-200);
+    --button-brand-disabled: var(--blue-800);
+    --button-reject-regular: var(--red-400);
+    --button-reject-hover: var(--red-300);
+    --button-reject-active: var(--red-200);
+    --button-reject-disabled: var(--red-800);
+  }
+}
+
+:root[data-theme="dark"] {
+  --background-primary: var(--gray-900);
+  --background-secondary: var(--gray-800);
+  --background-tertiary: var(--gray-700);
+
+  --foreground-primary: var(--gray-50);
+  --foreground-secondary: var(--gray-200);
+  --foreground-tertiary: var(--gray-400);
+
+  --text-primary: var(--gray-50);
+  --text-secondary: var(--gray-300);
+  --text-tertiary: var(--gray-500);
+  --text-disabled: var(--gray-600);
+  --text-inverse: var(--gray-900);
+
+  --icon-primary: var(--gray-50);
+  --icon-secondary: var(--gray-300);
+  --icon-tertiary: var(--gray-500);
+  --icon-disabled: var(--gray-600);
+  --icon-inverse: var(--gray-900);
+
+  --border-default: var(--gray-700);
+  --border-secondary: var(--gray-600);
+  --border-tertiary: var(--gray-800);
+  --border-disabled: var(--gray-700);
+
+  --semantic-error-background: var(--red-900);
+  --semantic-error-foreground: var(--red-300);
+  --semantic-error-border: var(--red-700);
+  --semantic-warning-background: var(--yellow-900);
+  --semantic-warning-foreground: var(--yellow-300);
+  --semantic-warning-border: var(--yellow-700);
+  --semantic-success-background: var(--green-900);
+  --semantic-success-foreground: var(--green-300);
+  --semantic-success-border: var(--green-700);
+  --semantic-info-background: var(--info-900);
+  --semantic-info-foreground: var(--info-300);
+  --semantic-info-border: var(--info-700);
+
+  --button-brand-regular: var(--blue-400);
+  --button-brand-hover: var(--blue-300);
+  --button-brand-active: var(--blue-200);
+  --button-brand-disabled: var(--blue-800);
+  --button-reject-regular: var(--red-400);
+  --button-reject-hover: var(--red-300);
+  --button-reject-active: var(--red-200);
+  --button-reject-disabled: var(--red-800);
+}

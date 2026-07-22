@@ -1,0 +1,37 @@
+/*
+ * Dimensions — spacing & radius.
+ * Use for all padding, gap, margin, and corner-radius values — never
+ * hardcode a px value on a component.
+ * Figma: Dimensions collection (VariableCollectionId:7:63)
+ */
+
+:root {
+  /* Spacing (scopes: WIDTH_HEIGHT, GAP) */
+  --spacing-0: 0px;
+  --spacing-2: 2px;
+  --spacing-4: 4px;
+  --spacing-6: 6px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
+  --spacing-48: 48px;
+  --spacing-64: 64px;
+  --spacing-80: 80px;
+  --spacing-96: 96px;
+
+  /* Radius (scope: CORNER_RADIUS) */
+  --radius-none: 0px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Radius extension: not in the Figma Dimensions collection, but used
+     consistently across Input's field and header form-chips (date filter,
+     tab group track) — pulled out here rather than repeated as a literal. */
+  --radius-field: 6px;
+}

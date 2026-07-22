@@ -1,0 +1,86 @@
+/*
+ * Top Header — page title + contextual actions bar.
+ * New reusable component (not in the documented Figma component set);
+ * built from existing tokens only.
+ */
+
+.top-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--spacing-16);
+  padding: var(--spacing-16) var(--spacing-32);
+  background: var(--background-primary);
+  border-bottom: 1px solid var(--border-default);
+}
+
+.top-header__title {
+  font-family: var(--typography-heading-h4-font-family);
+  font-size: var(--typography-heading-h4-font-size);
+  font-weight: var(--typography-heading-h4-font-weight);
+  line-height: var(--typography-heading-h4-line-height);
+  color: var(--text-primary);
+}
+
+.top-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
+  margin-left: auto;
+}
+
+.top-header__search {
+  width: 240px;
+}
+
+.top-header__menu-toggle {
+  display: none;
+  color: var(--icon-primary);
+}
+
+.date-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-6);
+  padding: var(--spacing-6) var(--spacing-12);
+  background: var(--background-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-field);
+  white-space: nowrap;
+}
+
+.date-filter .icon {
+  width: 14px;
+  height: 14px;
+  color: var(--text-secondary);
+}
+
+.date-filter__label {
+  font-size: var(--dashboard-text-sm-size);
+  line-height: var(--dashboard-text-sm-line-height);
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 1024px) {
+  .top-header__menu-toggle {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 860px) {
+  .top-header {
+    flex-wrap: wrap;
+  }
+
+  .top-header__search {
+    order: 1;
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .date-filter__label {
+    display: none;
+  }
+}

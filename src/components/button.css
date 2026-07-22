@@ -1,0 +1,148 @@
+/*
+ * Button — see docs/Button.md for full spec.
+ * Figma: Button component set (13:546)
+ *
+ * Usage: <button class="button button--primary button--cozy">
+ *          <svg class="icon button__icon"><use href="#icon-plus"/></svg>
+ *          <span class="button__label">Add New</span>
+ *        </button>
+ */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-8);
+  border-radius: var(--radius-md);
+  border: 1.5px solid transparent;
+  white-space: nowrap;
+  transition: background-color 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--input-border-focus);
+  outline-offset: 2px;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+}
+
+.button__icon {
+  color: currentColor;
+}
+
+/* Sizes */
+
+.button--compact {
+  height: 32px;
+  padding: 0 var(--spacing-12);
+  font-family: var(--typography-body-small-font-family);
+  font-size: var(--typography-body-small-font-size);
+  font-weight: 500;
+  line-height: var(--typography-body-small-line-height);
+  letter-spacing: var(--typography-body-small-letter-spacing);
+}
+
+.button--cozy {
+  height: 40px;
+  padding: 0 var(--spacing-16);
+  font-family: var(--typography-body-medium-font-family);
+  font-size: var(--typography-body-medium-font-size);
+  font-weight: 500;
+  line-height: var(--typography-body-medium-line-height);
+  letter-spacing: var(--typography-body-medium-letter-spacing);
+}
+
+.button--icon-only.button--compact {
+  width: 32px;
+  padding: 0 var(--spacing-8);
+}
+
+.button--icon-only.button--cozy {
+  width: 40px;
+  padding: 0 var(--spacing-12);
+}
+
+/* Type: Primary */
+
+.button--primary {
+  background: var(--button-brand-regular);
+  color: var(--text-inverse);
+}
+.button--primary:hover {
+  background: var(--button-brand-hover);
+}
+.button--primary:active {
+  background: var(--button-brand-active);
+}
+.button--primary:disabled {
+  background: var(--button-brand-disabled);
+  color: var(--text-inverse);
+}
+
+/* Type: Reject */
+
+.button--reject {
+  background: var(--button-reject-regular);
+  color: var(--text-inverse);
+}
+.button--reject:hover {
+  background: var(--button-reject-hover);
+}
+.button--reject:active {
+  background: var(--button-reject-active);
+}
+.button--reject:disabled {
+  background: var(--button-reject-disabled);
+  color: var(--text-inverse);
+}
+
+/* Type: Secondary */
+
+.button--secondary {
+  background: var(--background-primary);
+  border-color: var(--border-default);
+  color: var(--text-primary);
+}
+.button--secondary:hover {
+  background: var(--background-secondary);
+}
+.button--secondary:active {
+  background: var(--background-tertiary);
+}
+.button--secondary:disabled {
+  background: var(--background-primary);
+  border-color: var(--border-disabled);
+  color: var(--text-disabled);
+}
+
+/* Type: Tertiary */
+
+.button--tertiary {
+  background: transparent;
+  color: var(--text-primary);
+}
+.button--tertiary:hover {
+  background: var(--background-secondary);
+}
+.button--tertiary:active {
+  background: var(--background-tertiary);
+}
+.button--tertiary:disabled {
+  color: var(--text-disabled);
+}
+
+/* Modifier: brand-accented label — for a Secondary/Tertiary button whose
+   label should read as a branded action (e.g. "Export") while keeping
+   its type's fill/border treatment. */
+
+.button--accent {
+  color: var(--button-brand-regular);
+}
+.button--accent:hover {
+  color: var(--button-brand-hover);
+}
+.button--accent:active {
+  color: var(--button-brand-active);
+}

@@ -1,0 +1,29 @@
+/*
+ * Card — shared surface used by KPI, chart, top-products, activity and
+ * table cards. New reusable component; built from existing tokens only.
+ */
+
+.card {
+  background: var(--background-primary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-subtle);
+}
+
+.card--padded {
+  padding: var(--spacing-24);
+}
+
+.card__title {
+  font-size: var(--dashboard-text-md-size);
+  line-height: var(--dashboard-text-md-line-height);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-16);
+}

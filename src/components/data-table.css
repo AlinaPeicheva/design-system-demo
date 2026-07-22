@@ -1,0 +1,80 @@
+/*
+ * Data Table — tabular record list (e.g. Recent Orders).
+ * New reusable component; built from existing tokens only. Uses a real
+ * <table> for semantics/accessibility rather than a div grid.
+ */
+
+.data-table-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-16) var(--spacing-24);
+  border-bottom: 1px solid var(--border-default);
+}
+
+.data-table-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  font-size: var(--dashboard-text-sm-size);
+  line-height: var(--dashboard-text-sm-line-height);
+  font-weight: 500;
+  color: var(--button-brand-regular);
+}
+
+.data-table-card__link:hover {
+  color: var(--button-brand-hover);
+}
+
+.data-table-card__link .icon {
+  width: 14px;
+  height: 14px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th {
+  padding: var(--spacing-12) var(--spacing-24);
+  background: var(--background-secondary);
+  text-align: left;
+  font-size: var(--dashboard-text-2xs-size);
+  line-height: var(--dashboard-text-2xs-line-height);
+  font-weight: 600;
+  letter-spacing: var(--dashboard-table-header-letter-spacing);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+}
+
+.data-table th:last-child {
+  text-align: left;
+}
+
+.data-table td {
+  padding: var(--spacing-16) var(--spacing-24);
+  font-size: var(--dashboard-text-sm-size);
+  line-height: var(--dashboard-text-sm-line-height);
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-default);
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table td.data-table__id {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+@media (max-width: 720px) {
+  .data-table-card__scroll {
+    overflow-x: auto;
+  }
+
+  .data-table {
+    min-width: 640px;
+  }
+}

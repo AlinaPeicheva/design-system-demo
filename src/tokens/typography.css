@@ -1,0 +1,106 @@
+/*
+ * Typography — Inter, all scales.
+ * Each scale exposes 5 custom properties: font-family, font-size,
+ * font-weight, line-height, letter-spacing. Bind all five via `font`
+ * shorthand or individually — never hardcode a font value on a component.
+ * Figma: Typography collection (VariableCollectionId:7:120)
+ */
+
+:root {
+  --typography-font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Display Large (root scale) */
+  --typography-display-large-font-family: var(--typography-font-family);
+  --typography-display-large-font-size: 57px;
+  --typography-display-large-font-weight: 400;
+  --typography-display-large-line-height: 64px;
+  --typography-display-large-letter-spacing: -0.25px;
+
+  /* Display Medium */
+  --typography-display-medium-font-family: var(--typography-font-family);
+  --typography-display-medium-font-size: 45px;
+  --typography-display-medium-font-weight: 400;
+  --typography-display-medium-line-height: 52px;
+  --typography-display-medium-letter-spacing: 0px;
+
+  /* Heading 1 */
+  --typography-heading-h1-font-family: var(--typography-font-family);
+  --typography-heading-h1-font-size: 36px;
+  --typography-heading-h1-font-weight: 700;
+  --typography-heading-h1-line-height: 44px;
+  --typography-heading-h1-letter-spacing: -0.5px;
+
+  /* Heading 2 */
+  --typography-heading-h2-font-family: var(--typography-font-family);
+  --typography-heading-h2-font-size: 30px;
+  --typography-heading-h2-font-weight: 700;
+  --typography-heading-h2-line-height: 40px;
+  --typography-heading-h2-letter-spacing: -0.25px;
+
+  /* Heading 3 */
+  --typography-heading-h3-font-family: var(--typography-font-family);
+  --typography-heading-h3-font-size: 24px;
+  --typography-heading-h3-font-weight: 600;
+  --typography-heading-h3-line-height: 32px;
+  --typography-heading-h3-letter-spacing: 0px;
+
+  /* Heading 4 */
+  --typography-heading-h4-font-family: var(--typography-font-family);
+  --typography-heading-h4-font-size: 20px;
+  --typography-heading-h4-font-weight: 600;
+  --typography-heading-h4-line-height: 28px;
+  --typography-heading-h4-letter-spacing: 0px;
+
+  /* Body Large */
+  --typography-body-large-font-family: var(--typography-font-family);
+  --typography-body-large-font-size: 18px;
+  --typography-body-large-font-weight: 400;
+  --typography-body-large-line-height: 28px;
+  --typography-body-large-letter-spacing: 0px;
+
+  /* Body Medium */
+  --typography-body-medium-font-family: var(--typography-font-family);
+  --typography-body-medium-font-size: 16px;
+  --typography-body-medium-font-weight: 400;
+  --typography-body-medium-line-height: 24px;
+  --typography-body-medium-letter-spacing: 0.15px;
+
+  /* Body Small */
+  --typography-body-small-font-family: var(--typography-font-family);
+  --typography-body-small-font-size: 14px;
+  --typography-body-small-font-weight: 400;
+  --typography-body-small-line-height: 20px;
+  --typography-body-small-letter-spacing: 0.1px;
+
+  /* Body Link */
+  --typography-body-link-font-family: var(--typography-font-family);
+  --typography-body-link-font-size: 16px;
+  --typography-body-link-font-weight: 500;
+  --typography-body-link-line-height: 24px;
+  --typography-body-link-letter-spacing: 0.15px;
+
+  /* Caption */
+  --typography-caption-font-family: var(--typography-font-family);
+  --typography-caption-font-size: 12px;
+  --typography-caption-font-weight: 400;
+  --typography-caption-line-height: 16px;
+  --typography-caption-letter-spacing: 0.4px;
+
+  /*
+   * Dashboard density scale — extension, not part of the Figma Typography
+   * collection. Dense data surfaces (nav labels, KPI stats, table cells,
+   * chart axes) use a handful of in-between sizes the 11-step marketing
+   * scale above doesn't cover. Defined once here, reused across the
+   * dashboard components, instead of repeating raw px in each file.
+   */
+  --dashboard-text-2xs-size: 11px;
+  --dashboard-text-2xs-line-height: 16px;
+  --dashboard-text-xs-size: 12px;
+  --dashboard-text-xs-line-height: 16px;
+  --dashboard-text-sm-size: 13px;
+  --dashboard-text-sm-line-height: 20px;
+  --dashboard-text-md-size: 15px;
+  --dashboard-text-md-line-height: 22px;
+  --dashboard-eyebrow-letter-spacing: 0.8px;
+  --dashboard-table-header-letter-spacing: 0.5px;
+}

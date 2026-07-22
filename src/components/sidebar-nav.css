@@ -1,0 +1,180 @@
+/*
+ * Sidebar Nav — primary app navigation + user profile footer.
+ * New reusable component (not in the documented Figma component set);
+ * built from existing tokens only.
+ */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 240px;
+  flex-shrink: 0;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background: var(--background-primary);
+  border-right: 1px solid var(--border-default);
+  overflow-y: auto;
+  z-index: 40;
+  transition: transform 0.2s ease;
+}
+
+.sidebar__top {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  flex: 1;
+  min-height: 0;
+}
+
+.sidebar__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
+  padding: var(--spacing-20);
+}
+
+.sidebar__logo-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--spacing-32);
+  height: var(--spacing-32);
+  flex-shrink: 0;
+  background: var(--button-brand-regular);
+  border-radius: var(--radius-md);
+  color: var(--text-inverse);
+  font-weight: 700;
+  font-size: var(--typography-body-medium-font-size);
+}
+
+.sidebar__brand-name {
+  font-size: var(--typography-body-large-font-size);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.sidebar__close {
+  display: none;
+  margin-left: auto;
+  color: var(--icon-secondary);
+}
+
+.sidebar__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  padding: var(--spacing-16) var(--spacing-12) var(--spacing-4);
+}
+
+.sidebar__section-title {
+  padding-bottom: var(--spacing-4);
+  font-size: var(--dashboard-text-2xs-size);
+  line-height: var(--dashboard-text-2xs-line-height);
+  font-weight: 500;
+  letter-spacing: var(--dashboard-eyebrow-letter-spacing);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
+  width: 100%;
+  padding: var(--spacing-8);
+  border-radius: var(--radius-md);
+  font-family: var(--typography-body-small-font-family);
+  font-size: var(--typography-body-small-font-size);
+  line-height: var(--typography-body-small-line-height);
+  font-weight: 400;
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.nav-item:hover {
+  background: var(--background-secondary);
+  color: var(--text-primary);
+}
+
+.nav-item .icon {
+  color: var(--icon-secondary);
+}
+
+.nav-item.is-active {
+  background: var(--background-secondary);
+  color: var(--button-brand-regular);
+  font-weight: 600;
+}
+
+.nav-item.is-active .icon {
+  color: var(--button-brand-regular);
+}
+
+.sidebar__bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar__divider {
+  height: 1px;
+  background: var(--border-default);
+}
+
+.sidebar__profile {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
+  padding: var(--spacing-12) var(--spacing-16);
+}
+
+.sidebar__profile-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.sidebar__profile-name {
+  font-size: var(--dashboard-text-sm-size);
+  line-height: var(--dashboard-text-sm-line-height);
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar__profile-role {
+  font-size: var(--dashboard-text-2xs-size);
+  line-height: var(--dashboard-text-2xs-line-height);
+  color: var(--text-tertiary);
+}
+
+.sidebar__profile-logout {
+  color: var(--icon-tertiary);
+  flex-shrink: 0;
+}
+
+.sidebar__profile-logout:hover {
+  color: var(--text-primary);
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    transform: translateX(-100%);
+    box-shadow: var(--shadow-high);
+  }
+
+  .app-shell.is-nav-open .sidebar {
+    transform: translateX(0);
+  }
+
+  .sidebar__close {
+    display: inline-flex;
+  }
+}

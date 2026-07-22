@@ -1,0 +1,32 @@
+/*
+ * Tab Group — small segmented control (e.g. chart range switcher).
+ * New reusable component; built from existing tokens only.
+ */
+
+.tab-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: var(--spacing-4);
+  background: var(--background-secondary);
+  border-radius: var(--radius-field);
+}
+
+.tab-group__item {
+  padding: var(--spacing-4) var(--spacing-8);
+  border-radius: var(--radius-sm);
+  font-size: var(--dashboard-text-xs-size);
+  line-height: var(--dashboard-text-xs-line-height);
+  font-weight: 400;
+  color: var(--text-tertiary);
+}
+
+.tab-group__item:hover {
+  color: var(--text-primary);
+}
+
+.tab-group__item.is-active {
+  background: var(--background-primary);
+  font-weight: 600;
+  color: var(--text-primary);
+}

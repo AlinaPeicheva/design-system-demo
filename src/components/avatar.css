@@ -1,0 +1,21 @@
+/*
+ * Avatar — circular initials avatar (e.g. sidebar user profile).
+ * New reusable component; built from existing tokens only.
+ */
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  background: var(--button-brand-regular);
+  color: var(--text-inverse);
+  font-weight: 600;
+}
+
+.avatar--md {
+  width: 36px;
+  height: 36px;
+  font-size: var(--dashboard-text-sm-size);
+}

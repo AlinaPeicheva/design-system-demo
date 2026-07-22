@@ -1,0 +1,37 @@
+/*
+ * App Shell — top-level page layout: fixed sidebar + fluid main content.
+ * New reusable component (not in the documented Figma component set);
+ * built from existing tokens only.
+ */
+
+.app-shell {
+  display: flex;
+  align-items: stretch;
+  min-height: 100vh;
+  background: var(--background-secondary);
+}
+
+.app-shell__main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.app-shell__backdrop {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .app-shell__backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(17, 24, 39, 0.4);
+    z-index: 30;
+  }
+
+  .app-shell.is-nav-open .app-shell__backdrop {
+    display: block;
+  }
+}

@@ -1,0 +1,82 @@
+/*
+ * KPI Card — metric stat card with trend indicator.
+ * New reusable component; built from existing tokens only.
+ */
+
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-16);
+  width: 100%;
+}
+
+.kpi-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+  min-width: 0;
+}
+
+.kpi-card__label {
+  font-size: var(--dashboard-text-sm-size);
+  line-height: var(--dashboard-text-sm-line-height);
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.kpi-card__value {
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.kpi-card__change {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.trend-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-2) var(--spacing-6);
+  border-radius: var(--radius-sm);
+  font-size: var(--dashboard-text-xs-size);
+  line-height: var(--dashboard-text-xs-line-height);
+  font-weight: 600;
+}
+
+.trend-badge .icon {
+  width: 12px;
+  height: 12px;
+}
+
+.trend-badge--up {
+  background: var(--semantic-success-background);
+  color: var(--semantic-success-foreground);
+}
+
+.trend-badge--down {
+  background: var(--semantic-error-background);
+  color: var(--semantic-error-foreground);
+}
+
+.kpi-card__change-meta {
+  font-size: var(--dashboard-text-xs-size);
+  line-height: var(--dashboard-text-xs-line-height);
+  color: var(--text-tertiary);
+}
+
+@media (max-width: 1024px) {
+  .kpi-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .kpi-row {
+    grid-template-columns: 1fr;
+  }
+}
