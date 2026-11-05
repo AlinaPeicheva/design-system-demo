@@ -34,7 +34,7 @@
 }
 
 .top-header__menu-toggle {
-  display: none;
+  flex-shrink: 0;
   color: var(--icon-primary);
 }
 
@@ -60,12 +60,6 @@
   line-height: var(--dashboard-text-sm-line-height);
   font-weight: 500;
   color: var(--text-secondary);
-}
-
-@media (max-width: 1024px) {
-  .top-header__menu-toggle {
-    display: inline-flex;
-  }
 }
 
 @media (max-width: 860px) {

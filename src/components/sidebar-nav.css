@@ -17,7 +17,13 @@
   border-right: 1px solid var(--border-default);
   overflow-y: auto;
   z-index: 40;
-  transition: transform 0.2s ease;
+  transition: width 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.app-shell.is-nav-collapsed .sidebar {
+  width: var(--spacing-0);
+  border-right-width: var(--spacing-0);
+  overflow: hidden;
 }
 
 .sidebar__top {

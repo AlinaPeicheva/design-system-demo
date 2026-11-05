@@ -6,6 +6,6 @@ rm -rf "$site_dir"
 mkdir -p "$site_dir"
 
 sed 's#\.\./src/#src/#g' pages/dashboard.html > "$site_dir/index.html"
-cp -R src "$site_dir/src"
+ln -s "$PWD/src" "$site_dir/src"
 
 exec python3 -m http.server "$PORT" --bind 0.0.0.0 --directory "$site_dir"
